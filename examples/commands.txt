@@ -1,0 +1,2 @@
+!export <filename> - saves spreadsheet to file with specified filename (filename length 5-20)
+!import <filename> - !clears spreadsheet! and imports saved state from file with specified filename (if file doesn't exist, only clears spreadsheet)

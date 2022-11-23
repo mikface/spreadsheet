@@ -1,0 +1,23 @@
+Spreadsheet
+
+Tato aplikace je implementaci jednoducheho spreadsheetu.
+Podporuje:
+1) Number bunky - desetinna a cela cisla
+2) Funkcni bunky - bunky s vyhodnocenim vyrazu, zacinaji znakem "="
+3) String bunky - bunky s textem, vsechny ostatni
+
+Funkcni bunky musi dodrzet format, kdy kazda cast formule je oddelena whitespace (idealne jedna mezera). To plati i pro zavorky.
+Spreadsheet umi detekovat cykly, umi prekreslit hodnotu bunky hned po zmene zavisle bunky.
+Po zavolani commandu !import nebo !export umi nacitat ze / ukladat do souboru, format je mozno videt v priloze ve slozce examples.
+K dispozici jsou take 4 jednoduche funkce:
+sin
+cosin
+max
+min
+
+Pomoci naroubovani na pouzity polymorfismus je mozno jednoduse funkce pridat.
+
+Funkcni bunky jsou parsovany pomocu Shunting yard algoritmu, podporuje i vyrazy se zavorkami.
+
+Polymorfismus je pouzit u typu bunek (Cell => NumberCell => FunctionCell, Cell => StringCell)
+a u typu Expressions, ktere se zarazuji do fronty pro vyhodnoceni Shunting yard (Expression => OperatorExpression, Expression => DoubleExpression etc.)
